@@ -125,19 +125,19 @@ let PRICE = parseInt('')
 let STARS = parseInt('')
 
 const filtrar = () => {
-  const pricelessthan10 = []
-  const pricebw10_20 = []
-  const pricemore20 = []
+  const filter = []
   for (const product of products) {
     if (PRICE < product.price) {
-      pricemore20.push(product)
+      filter.push(product)
     } else if (product.price > 10 && PRICE > product.price) {
-      pricebw10_20.push(product)
+      filter.push(product)
+      console.log(filter)
+    } else if (product.price < PRICE) {
+      filter.push(product)
+      console.log(filter)
     }
   }
-
-  printproducts(pricemore20)
-  printproducts(pricebw10_20)
+  printproducts(filter)
 }
 
 const header = document.querySelector('header')
