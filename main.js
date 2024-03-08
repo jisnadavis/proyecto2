@@ -125,14 +125,18 @@ let PRICE = parseInt('')
 let STARS = parseInt('')
 
 const filtrar = () => {
-  const filterd = []
+  const pricelessthan10 = []
+  const pricebw10_20 = []
+  const pricemore20 = []
   for (const product of products) {
     if (PRICE < product.price) {
-      filterd.push(product)
+      pricemore20.push(product)
+    } else if (product.price > 10 && PRICE > product.price) {
+      pricebw10_20.push(product)
     }
-    console.log(filterd)
   }
-  printproducts(filterd)
+  printproducts(pricemore20)
+  printproducts(pricebw10_20)
 }
 const header = document.querySelector('header')
 const img = document.createElement('img')
@@ -205,11 +209,11 @@ clearbutton.textContent = 'clear filter'
 divfilter.appendChild(clearbutton)
 
 //creating products on the rightside
-
+const productscontainer = document.createElement('div')
+productscontainer.className = 'productscontiner'
 const printproducts = (items) => {
-  const productscontainer = document.createElement('div')
   productscontainer.innerHTML = ''
-  productscontainer.className = 'productscontiner'
+
   for (const product of items) {
     const productdiv = document.createElement('div')
 
