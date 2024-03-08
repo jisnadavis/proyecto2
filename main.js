@@ -135,9 +135,11 @@ const filtrar = () => {
       pricebw10_20.push(product)
     }
   }
+
   printproducts(pricemore20)
   printproducts(pricebw10_20)
 }
+
 const header = document.querySelector('header')
 const img = document.createElement('img')
 img.src = './asimg/logo.png'
