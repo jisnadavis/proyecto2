@@ -124,31 +124,15 @@ const ratingproduct = [
 let PRICE = parseInt('')
 let STARS = parseInt('')
 
-function clearContainer() {
-  // Get the container element
-  var container = document.querySelector('.productscontiner')
-
-  // Clear the content of the container
-  container.innerHTML = ''
-}
 const filtrar = () => {
-  const pricelessthan10 = []
-  const pricebw10_20 = []
-  const pricemore20 = []
-  const star5 = []
-  const star3_4 = []
-  const starless3 = []
-
+  const filterd = []
   for (const product of products) {
     if (PRICE < product.price) {
-      pricemore20.push(product)
-    } else if (product.price > 10 && PRICE > product.price) {
-      pricebw10_20.push(product)
+      filterd.push(product)
     }
+    console.log(filterd)
   }
-  clearContainer()
-  printproducts(pricemore20)
-  printproducts(pricebw10_20)
+  printproducts(filterd)
 }
 const header = document.querySelector('header')
 const img = document.createElement('img')
