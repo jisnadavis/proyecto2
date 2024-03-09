@@ -79,7 +79,7 @@ const products = [
     image: './asimg/dree9.webp',
     imagelove: './asimg/red.png',
     imagecov: './asimg/cover.png',
-    stars: 4
+    stars: 2
   },
   {
     id: 10,
@@ -119,16 +119,16 @@ const pricelist = [
 const ratingproduct = [
   { description: 'product with 5 stars', value: 5 },
   { description: 'product in between 3 and 4 stars', value: 4 },
-  { description: 'products less than 3 star', value: 3 }
+  { description: 'products less than 3 star', value: 2 }
 ]
 let PRICE = parseInt('')
 let STARS = parseInt('')
 
-//
-const filtrar = () => {
+const filtrarprecio = () => {
   const pricelessthan10 = []
   const pricebw10_20 = []
   const pricemore20 = []
+
   for (const product of products) {
     if (PRICE < product.price) {
       pricemore20.push(product)
@@ -136,13 +136,57 @@ const filtrar = () => {
       pricebw10_20.push(product)
     } else if (product.price < PRICE) pricelessthan10.push(product)
   }
-  console.log(pricemore20)
-  console.log(pricelessthan10)
-  printproducts(pricemore20)
-  printproducts(pricebw10_20)
-  printproducts(pricelessthan10)
+  const create20 = () => {
+    if (PRICE == 20) {
+      printproducts(pricemore20)
+    }
+  }
+  const create19 = () => {
+    if (PRICE == 19.99) {
+      printproducts(pricebw10_20)
+    }
+  }
+  const create10 = () => {
+    if (PRICE == 9.99) {
+      printproducts(pricelessthan10)
+    }
+  }
+  create20()
+  create19()
+  create10()
 }
-
+const filtrarstar = () => {
+  const star5 = []
+  const star3_4 = []
+  const starless3 = []
+  for (const product of products) {
+    if (product.stars == 5) {
+      star5.push(product)
+    } else if (product.stars == 4 || product.stars == 3) {
+      star3_4.push(product)
+    } else if (product.stars < 3) {
+      starless3.push(product)
+    }
+    const create5 = () => {
+      if (PRICE == 5) {
+        printproducts(star5)
+      }
+    }
+    const create3_4 = () => {
+      if (STARS == 4) {
+        printproducts(star3_4)
+      }
+    }
+    const lessthan3 = () => {
+      if (STARS == 2) {
+        printproducts(starless3)
+      }
+    }
+    create5()
+    create3_4()
+    lessthan3()
+  }
+}
 const header = document.querySelector('header')
 const img = document.createElement('img')
 img.src = './asimg/logo.png'
@@ -186,32 +230,36 @@ const createfilter = (options) => {
   const selector = document.createElement('select')
 
   const tittleh2 = document.createElement('option')
+
   tittleh2.textContent = 'search for item'
-  divfilter.appendChild(selector)
+  tittleh2.disabled = true
   selector.appendChild(tittleh2)
+
+  divfilter.appendChild(selector)
   options.forEach((option) => {
     const optionvalues = document.createElement('option')
-
     optionvalues.textContent = option.description
     optionvalues.value = option.value
-
     selector.appendChild(optionvalues)
   })
 
   selector.addEventListener('change', (e) => {
     PRICE = e.target.value
     STARS = e.target.value
-    filtrar()
+    filtrarprecio()
+    filtrarstar()
+  })
+  const clearbutton = document.createElement('button')
+  clearbutton.textContent = 'clear filter'
+  divfilter.appendChild(clearbutton)
+  clearbutton.addEventListener('click', () => {
+    printproducts(products)
+    selector.selectedIndex = 0
   })
 }
-
 aside.appendChild(divfilter)
 createfilter(pricelist)
 createfilter(ratingproduct)
-
-const clearbutton = document.createElement('button')
-clearbutton.textContent = 'clear filter'
-divfilter.appendChild(clearbutton)
 
 //creating products on the rightside
 const productscontainer = document.createElement('div')
