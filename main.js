@@ -219,7 +219,7 @@ btnmenu.appendChild(btnimg)
 header.appendChild(btnmenu)
 
 const maindiv = document.querySelector('#app')
-const aside = document.createElement('aside')
+const aside = document.createElement('div')
 aside.className = 'side_filter'
 maindiv.appendChild(aside)
 //-----putting filter-------//
@@ -249,6 +249,7 @@ const createfilter = (options) => {
     filtrarprecio()
     filtrarstar()
   })
+
   const clearbutton = document.createElement('button')
   clearbutton.textContent = 'clear filter'
   divfilter.appendChild(clearbutton)

@@ -177,3 +177,41 @@ header{
     right: 0;
   }
 }
+@media(max-width:980px){
+  .side_filter{
+    width:100svw;
+    height:150px;
+    background-color: rgb(191, 191, 228);
+  
+  margin: var(--ppk-margin-s);
+  
+   position: absolute;
+   top:100px;
+   
+}
+.mainfilter{
+  display: flex;
+  flex-direction: row;
+  padding: var(--ppk-padding-l);
+  gap: var(--ppk-gap-s);
+  position: absolute;
+  top:-10px;
+  width:100%;
+  height:150px
+  
+}
+.mainfilter >select,button{
+  width:95px;
+  height: 35px;
+
+}
+.productscontiner{
+  display:flex;
+  width: 70% !important;;
+  flex-wrap: wrap;
+  position: absolute;
+  left:0px;
+  top: 350px;
+  gap: var(--ppk-gap-l);
+}
+}
