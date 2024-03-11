@@ -46,6 +46,7 @@ a{
 .menu img{
   width:50px;
   height: 50px;
+  object-fit: fill;
 }
 header{
   display:flex;
@@ -143,13 +144,28 @@ header{
 .fill{
   background-color: rgb(182, 58, 58);
 }
+.side_filter{
+  display:flex;
+  height: 100svh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
 .mainfilter{
   display: flex;
   padding: var(--ppk-padding-l);
   flex-direction: column;
-  gap: var(--ppk-gap-l);
-  justify-content: space-around;
-  height: 100svh;
+  gap: 100px;
+ height:200px
+  
+}
+.reset{
+  display:flex;
+  
+}
+.reset >button{
+  width: 100px !important;
 }
 /*responsive*/
 @media(max-width:1200px){
@@ -163,6 +179,8 @@ header{
   }
   .menu{
     display: block;
+    height: 50px;
+    width:50px;
   }
   .menu_vertical{
     display:flex;
@@ -180,18 +198,18 @@ header{
 @media(max-width:980px){
   .side_filter{
     width:100svw;
-    height:150px;
+    height:200px;
     background-color: rgb(191, 191, 228);
   
-  margin: var(--ppk-margin-s);
-  
+   align-items: center;
+   align-content: center;
    position: absolute;
    top:100px;
    
 }
 .mainfilter{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: var(--ppk-padding-l);
   gap: var(--ppk-gap-s);
   position: absolute;
@@ -200,10 +218,14 @@ header{
   height:150px
   
 }
-.mainfilter >select,button{
-  width:95px;
+.mainfilter >select{
+  width:200px;
   height: 35px;
 
+}
+.reset>button{
+  position: relative;
+  top:50px;
 }
 .productscontiner{
   display:flex;

@@ -169,7 +169,7 @@ const filtrarstar = () => {
       starless3.push(product)
     }
     const create5 = () => {
-      if (PRICE == 5) {
+      if (STARS == 5) {
         printproducts(star5)
       }
     }
@@ -227,41 +227,63 @@ maindiv.appendChild(aside)
 //putting selector on the leftside
 const divfilter = document.createElement('div')
 divfilter.className = 'mainfilter'
-const createfilter = (options) => {
-  const selector = document.createElement('select')
+//creating the selector for price
+const selectorprice = document.createElement('select')
 
-  const tittleh2 = document.createElement('option')
+const maintitle = document.createElement('Option')
+maintitle.textContent = 'elige un rango de precio'
+maintitle.disabled = true
+selectorprice.appendChild(maintitle)
+pricelist.forEach((pricevalue) => {
+  const optionprice = document.createElement('option')
+  optionprice.textContent = pricevalue.description
+  optionprice.value = pricevalue.value
+  selectorprice.selectedIndex = 0
+  selectorprice.appendChild(optionprice)
+})
+selectorprice.addEventListener('change', (e) => {
+  PRICE = e.target.value
+  filtrarprecio()
+  selectorstar.disabled = true
+})
+//filter for star
+const selectorstar = document.createElement('select')
 
-  tittleh2.textContent = 'search for item'
-  tittleh2.disabled = true
-  selector.appendChild(tittleh2)
+const maintitle1 = document.createElement('Option')
+maintitle1.textContent = 'elige un rango puntacion'
+maintitle1.disabled = true
+selectorstar.appendChild(maintitle1)
+ratingproduct.forEach((rate) => {
+  const optionrate = document.createElement('option')
+  optionrate.textContent = rate.description
+  optionrate.value = rate.value
+  selectorstar.selectedIndex = 0
+  selectorstar.appendChild(optionrate)
+})
+selectorstar.addEventListener('change', (e) => {
+  STARS = e.target.value
+  filtrarstar()
 
-  divfilter.appendChild(selector)
-  options.forEach((option) => {
-    const optionvalues = document.createElement('option')
-    optionvalues.textContent = option.description
-    optionvalues.value = option.value
-    selector.appendChild(optionvalues)
-  })
+  selectorprice.disabled = true
+})
+//resetbutton
+const filterdiv = document.createElement('div')
+filterdiv.className = 'reset'
+const resetbutton = document.createElement('button')
+resetbutton.textContent = 'reset filters'
+resetbutton.addEventListener('click', () => {
+  selectorprice.selectedIndex = 0
+  selectorstar.selectedIndex = 0
+  printproducts(products)
+  selectorprice.disabled = false
+  selectorstar.disabled = false
+})
 
-  selector.addEventListener('change', (e) => {
-    PRICE = e.target.value
-    STARS = e.target.value
-    filtrarprecio()
-    filtrarstar()
-  })
-
-  const clearbutton = document.createElement('button')
-  clearbutton.textContent = 'clear filter'
-  divfilter.appendChild(clearbutton)
-  clearbutton.addEventListener('click', () => {
-    printproducts(products)
-    selector.selectedIndex = 0
-  })
-}
+divfilter.appendChild(selectorprice)
+divfilter.appendChild(selectorstar)
 aside.appendChild(divfilter)
-createfilter(pricelist)
-createfilter(ratingproduct)
+aside.appendChild(filterdiv)
+filterdiv.appendChild(resetbutton)
 
 //creating products on the rightside
 const productscontainer = document.createElement('div')
