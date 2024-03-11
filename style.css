@@ -204,7 +204,7 @@ header{
    align-items: center;
    align-content: center;
    position: absolute;
-   top:100px;
+   top:140px;
    
 }
 .mainfilter{
@@ -233,7 +233,7 @@ header{
   flex-wrap: wrap;
   position: absolute;
   left:0px;
-  top: 350px;
+  top: 400px;
   gap: var(--ppk-gap-l);
 }
 }
