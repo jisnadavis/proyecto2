@@ -1,39 +1,40 @@
 import './style.css'
+
 const products = [
   {
     id: 1,
     name: 'The blue  split leaf resort shirt',
     price: 10.99,
-    image: './asimg/dress1.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dress1.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 5
   },
   {
     id: 2,
     name: 'The zazzle-resort-shirt',
     price: 19.99,
-    image: './asimg/drees2.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/drees2.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 3
   },
   {
     id: 3,
     name: 'The red indian clan shirt ',
     price: 14.49,
-    image: './asimg/dress3.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dress3.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 5
   },
   {
     id: 4,
     name: 'The vintage Huma shirt',
     price: 8.99,
-    image: './asimg/dress5.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dress5.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 2
   },
   {
@@ -49,63 +50,63 @@ const products = [
     id: 6,
     name: 'The blue wave-shirt ',
     price: 12.99,
-    image: './asimg/dress6.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dress6.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 3
   },
   {
     id: 7,
     name: 'The vintage huma shirt',
     price: 7.49,
-    image: './asimg/dress7.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dress7.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 4
   },
   {
     id: 8,
     name: 'The floral-allure-resort-shirt',
     price: 29.99,
-    image: './asimg/dress8.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dress8.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 4
   },
   {
     id: 9,
     name: 'The floral-allure-resort-shirt',
     price: 17.99,
-    image: './asimg/dree9.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dree9.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 2
   },
   {
     id: 10,
     name: 'The zazzle-resort-shirt',
     price: 11.49,
-    image: './asimg/dress10.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dress10.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 5
   },
   {
     id: 11,
     name: 'The vintage huma shirt',
     price: 6.99,
-    image: './asimg/paprika11.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/paprika11.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 3
   },
   {
     id: 12,
     name: 'The blue wave-shirt ',
     price: 34.99,
-    image: './asimg/dress8.webp',
-    imagelove: './asimg/red.png',
-    imagecov: './asimg/cover.png',
+    image: '/asimg/dress8.webp',
+    imagelove: '/asimg/red.png',
+    imagecov: '/asimg/cover.png',
     stars: 4
   }
 ]
