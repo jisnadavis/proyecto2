@@ -79,17 +79,20 @@ header{
 }
 .productscontiner{
   display:flex;
-  width: 70% !important;;
+  width: 60% !important;;
   flex-wrap: wrap;
   position: absolute;
   left:500px;
   top: 150px;
   gap: var(--ppk-gap-l);
+  padding: var(--ppk-padding-l);
+  margin: var(--ppk-margin-m);
 }
 .product{
   width:250px;
   position: relative;
   display:flex;
+  min-width: 200px;
   flex-direction: column;
   gap: var(--ppk-gap-s);
   align-content: center;
@@ -163,17 +166,23 @@ header{
 }
 .reset{
   display:flex;
-  flex-direction: column;
-  gap:var(--ppk-gap-xl)
-  
+  flex-direction: row;
+  gap:var(--ppk-gap-xl);
+  min-width:200px;
+  height: 50px;
+  width: 375px;
 }
 .reset >button{
   width: 100px !important;
 }
 /*responsive*/
+
 @media(max-width:1200px){
 .logo{
   width:200px;
+}
+header{
+  justify-content: space-around;
 }
 }
 @media(max-width:700px){
@@ -201,7 +210,7 @@ header{
     right: 0;
   }
 }
-@media(max-width:980px){
+@media(max-width:1127px){
   .side_filter{
     width:100svw;
     height:250px;
@@ -229,48 +238,40 @@ header{
   height: 35px;
 
 }
+.reset{
+  position: relative;
+  top: 40px;
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: var(--ppk-gap-m);
+}
 .reset>button{
   position: relative;
-  top:50px;
+  width:60px !important;
 }
 .productscontiner{
   display:flex;
-  width: 70% !important;;
+  width: 60% !important;;
   flex-wrap: wrap;
   position: absolute;
   left:0px;
   top: 450px;
+  justify-content: space-between;
+  gap: var(--ppk-gap-s);
+}
+.product{
+  width: 250px;
+  position: relative;
+  display:flex;
+  flex-direction: column;
   gap: var(--ppk-gap-l);
+  align-content: center;
+  align-items: center;
+  padding: var(--ppk-padding-l);
+  padding-left: var(--ppk-padding-m);
+}
+.productsize>img{
+  width:150px;
 }
 }
-@media(max-width:980px){
-  .product{
-    width:300px;
-    position: relative;
-    display:flex;
-    flex-direction: column;
-    gap: var(--ppk-gap-s);
-    align-content: center;
-    align-items: center;
-    padding: var(--ppk-padding-l);
-    padding-left: var(--ppk-padding-m);
-  }
-  .productscontiner{
-    display:flex;
-    width: 70% !important;;
-    flex-wrap: wrap;
-    position: absolute;
-    left:0px;
-    top: 450px;
-    gap: var(--ppk-gap-l);
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    margin: var(--ppk-margin-xl);
-    padding: var(--ppk-padding-l);
-  }
-  .productsize>img{
-    width:250px;
-  }}
-  
-  
