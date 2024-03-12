@@ -54,6 +54,7 @@ header{
   background-color: rgb(132, 132, 206);
   width:100svw;
   height: 15svh;
+  min-width: 300px;
   padding: var(--ppk-padding-m);
   position: fixed;
   z-index: 2;
@@ -157,11 +158,13 @@ header{
   padding: var(--ppk-padding-l);
   flex-direction: column;
   gap: 100px;
- height:200px
+ height:250px
   
 }
 .reset{
   display:flex;
+  flex-direction: column;
+  gap:var(--ppk-gap-xl)
   
 }
 .reset >button{
@@ -176,6 +179,9 @@ header{
 @media(max-width:700px){
   .home{
     display: none;
+  }
+  header{
+    width:100svw;
   }
   .menu{
     display: block;
@@ -198,9 +204,9 @@ header{
 @media(max-width:980px){
   .side_filter{
     width:100svw;
-    height:200px;
+    height:250px;
     background-color: rgb(191, 191, 228);
-  
+  min-width: 300px;
    align-items: center;
    align-content: center;
    position: absolute;
@@ -233,7 +239,34 @@ header{
   flex-wrap: wrap;
   position: absolute;
   left:0px;
-  top: 400px;
+  top: 450px;
   gap: var(--ppk-gap-l);
 }
 }
+@media(max-width:980px){
+  .product{
+    width:300px;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    gap: var(--ppk-gap-s);
+    align-content: center;
+    align-items: center;
+  }
+  .productscontiner{
+    display:flex;
+    width: 70% !important;;
+    flex-wrap: wrap;
+    position: absolute;
+    left:0px;
+    top: 450px;
+    gap: var(--ppk-gap-l);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .productsize>img{
+    width:250px;
+  }}
+  
+  

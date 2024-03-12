@@ -282,6 +282,9 @@ selectorstar.addEventListener('change', (e) => {
 //resetbutton
 const filterdiv = document.createElement('div')
 filterdiv.className = 'reset'
+const filterbtn = document.createElement('button')
+filterbtn.textContent = 'buscar'
+filterbtn.addEventListener('click', filtrartwo)
 const resetbutton = document.createElement('button')
 resetbutton.textContent = 'reset filter'
 resetbutton.addEventListener('click', () => {
@@ -291,15 +294,13 @@ resetbutton.addEventListener('click', () => {
   selectorprice.disabled = false
   selectorstar.disabled = false
 })
-const filterbtn = document.createElement('button')
-filterbtn.textContent = 'buscar'
-filterbtn.addEventListener('click', filtrartwo)
+
 divfilter.appendChild(selectorprice)
 divfilter.appendChild(selectorstar)
 aside.appendChild(divfilter)
 aside.appendChild(filterdiv)
-filterdiv.appendChild(resetbutton)
 filterdiv.appendChild(filterbtn)
+filterdiv.appendChild(resetbutton)
 
 //creating products on the rightside
 const productscontainer = document.createElement('div')
