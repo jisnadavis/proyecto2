@@ -194,13 +194,12 @@ const filtrartwo = () => {
 
   const filteredProducts = products.filter((product) => {
     const meetsPriceCriteria =
-      selectedPrice === 0 || product.price < selectedPrice
+      selectedPrice === 0 || product.price <= selectedPrice
     const meetsRatingCriteria =
       selectedRating === 0 || product.stars >= selectedRating
 
     return meetsPriceCriteria && meetsRatingCriteria
   })
-
   printproducts(filteredProducts)
 }
 
