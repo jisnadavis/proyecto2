@@ -188,6 +188,22 @@ const filtrarstar = () => {
     lessthan3()
   }
 }
+const filtrartwo = () => {
+  const selectedPrice = parseFloat(selectorprice.value)
+  const selectedRating = parseInt(selectorstar.value)
+
+  const filteredProducts = products.filter((product) => {
+    const meetsPriceCriteria =
+      selectedPrice === 0 || product.price < selectedPrice
+    const meetsRatingCriteria =
+      selectedRating === 0 || product.stars >= selectedRating
+
+    return meetsPriceCriteria && meetsRatingCriteria
+  })
+
+  printproducts(filteredProducts)
+}
+
 const header = document.querySelector('header')
 const img = document.createElement('img')
 img.src = './asimg/logo.png'
@@ -244,7 +260,6 @@ pricelist.forEach((pricevalue) => {
 selectorprice.addEventListener('change', (e) => {
   PRICE = e.target.value
   filtrarprecio()
-  selectorstar.disabled = true
 })
 //filter for star
 const selectorstar = document.createElement('select')
@@ -263,8 +278,6 @@ ratingproduct.forEach((rate) => {
 selectorstar.addEventListener('change', (e) => {
   STARS = e.target.value
   filtrarstar()
-
-  selectorprice.disabled = true
 })
 //resetbutton
 const filterdiv = document.createElement('div')
@@ -278,12 +291,15 @@ resetbutton.addEventListener('click', () => {
   selectorprice.disabled = false
   selectorstar.disabled = false
 })
-
+const filterbtn = document.createElement('button')
+filterbtn.textContent = 'buscar'
+filterbtn.addEventListener('click', filtrartwo)
 divfilter.appendChild(selectorprice)
 divfilter.appendChild(selectorstar)
 aside.appendChild(divfilter)
 aside.appendChild(filterdiv)
 filterdiv.appendChild(resetbutton)
+filterdiv.appendChild(filterbtn)
 
 //creating products on the rightside
 const productscontainer = document.createElement('div')
