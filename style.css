@@ -252,6 +252,8 @@ header{
     gap: var(--ppk-gap-s);
     align-content: center;
     align-items: center;
+    padding: var(--ppk-padding-l);
+    padding-left: var(--ppk-padding-m);
   }
   .productscontiner{
     display:flex;
